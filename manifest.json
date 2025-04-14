@@ -1,10 +1,18 @@
 {
     "manifest_version": 3,
-    "name": "Egirl TradingView Theme",
+    "name": "TradingView Theme",
     "version": "1.0",
     "description": "Adds a kawaii aesthetic to TradingView charts on Hyperliquid.",
-    "permissions": ["scripting", "activeTab", "storage"],
+    "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+    },
+    "permissions": ["activeTab", "scripting", "storage"],
     "host_permissions": ["https://app.hyperliquid.xyz/*"],
+    "background": {
+    "service_worker": "background.js"
+    },
     "content_scripts": [
       {
         "matches": ["https://app.hyperliquid.xyz/*"],
@@ -14,5 +22,11 @@
     ],
     "action": {
       "default_popup": "popup/index.html"
-    }
+    },
+    "web_accessible_resources": [{
+      "resources": ["assets/hatsunemiku.png"],
+      "matches": ["https://app.hyperliquid.xyz/*"]
+    }]
 }
+
+
