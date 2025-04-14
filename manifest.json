@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Egirl TradingView Theme",
+    "version": "1.0",
+    "description": "Adds a kawaii aesthetic to TradingView charts on Hyperliquid.",
+    "permissions": ["scripting", "activeTab", "storage"],
+    "host_permissions": ["https://app.hyperliquid.xyz/*"],
+    "content_scripts": [
+      {
+        "matches": ["https://app.hyperliquid.xyz/*"],
+        "js": ["content.js"],
+        "css": ["styles/overlay.css"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup/index.html"
+    }
+}
